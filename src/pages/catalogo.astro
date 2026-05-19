@@ -1,0 +1,326 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import img1 from '../img/modelo_1.png';
+import img2 from '../img/modelo_2.png';
+import img3 from '../img/modelo_3.png';
+import img4 from '../img/modelo_4.png';
+import img5 from '../img/modelo_5.png';
+import img6 from '../img/modelo_6.png';
+
+const productos = [
+  {
+    id: 1,
+    nombre: "Modelo 1 - 24 m2 – 1 dormitorio",
+    precio: "Cotizar",
+    imagen: img1.src,
+    categoria: "Modelo 1",
+    dormitorios: 1,
+    m2: 24,
+    pisos: 1
+  },
+  {
+    id: 2,
+    nombre: "Modelo 2 - 48 m2 – 2 dormitorios",
+    precio: "Cotizar",
+    imagen: img2.src,
+    categoria: "Modelo 2",
+    dormitorios: 2,
+    m2: 48,
+    pisos: 1
+  },
+  {
+    id: 3,
+    nombre: "Modelo 3 - 70 m2 – 3 dormitorios",
+    precio: "Cotizar",
+    imagen: img3.src,
+    categoria: "Modelo 3",
+    dormitorios: 3,
+    m2: 70,
+    pisos: 1
+  },
+  {
+    id: 4,
+    nombre: "Modelo 4 - 90 m2 – 4 dormitorios",
+    precio: "Cotizar",
+    imagen: img4.src,
+    categoria: "Modelo 4",
+    dormitorios: 4,
+    m2: 90,
+    pisos: 1
+  },
+  {
+    id: 5,
+    nombre: "Modelo 5 - 120 m2 – 5 dormitorios, 2 Pisos",
+    precio: "Cotizar",
+    imagen: img5.src,
+    categoria: "Modelo 5",
+    dormitorios: 5,
+    m2: 120,
+    pisos: 2
+  },
+  {
+    id: 6,
+    nombre: "Modelo 6 - 140 m2 – 6 dormitorios, 2 Pisos",
+    precio: "Cotizar",
+    imagen: img6.src,
+    categoria: "Modelo 6",
+    dormitorios: 6,
+    m2: 140,
+    pisos: 2
+  }
+];
+
+const categorias = ["Modelo 1", "Modelo 2", "Modelo 3", "Modelo 4", "Modelo 5", "Modelo 6"];
+const dormitorios = [1, 2, 3, 4, 5, 6];
+const pisos = [1, 2];
+---
+
+<Layout title="Colección de Modelos SIP | VERTYS" description="Catálogo de viviendas y espacios modulares construidos con paneles SIP. Alta eficiencia térmica y rapidez constructiva.">
+  <Header />
+
+  <!-- Hero Header -->
+  <section class="bg-black-primary text-white py-20 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[url('https://images.unsplash.com/photo-1541888081622-6b94098eb330?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center"></div>
+    <div class="max-w-7xl mx-auto relative z-10 text-center">
+      <h1 class="text-4xl md:text-6xl font-black mb-4">Colección de Viviendas</h1>
+      <p class="text-xl text-gray-300 max-w-2xl mx-auto">Sistemas pre-diseñados y kits de paneles SIP listos para construir. Diseños modernos con la más alta eficiencia térmica.</p>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="py-16 px-4 bg-grey-light min-h-screen">
+    <div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-12">
+      
+      <!-- Sidebar Filters -->
+      <aside class="w-full lg:w-1/4">
+        <div class="bg-white p-6 rounded-2xl shadow-sm sticky top-32">
+          <h2 class="text-xl font-bold text-black-primary mb-6">Filtros</h2>
+          
+          <!-- Colecciones -->
+          <div class="mb-8">
+            <h3 class="font-bold text-text-dark mb-4 border-b border-gray-100 pb-2">Líneas de modelos</h3>
+            <ul class="space-y-3">
+              {categorias.map(cat => (
+                <li>
+                  <label class="flex items-center space-x-3 cursor-pointer group">
+                    <input type="checkbox" value={cat} class="filter-categoria form-checkbox h-5 w-5 text-gold-accent rounded border-gray-300 focus:ring-gold-accent" />
+                    <span class="text-gray-600 group-hover:text-gold-accent transition-colors">{cat}</span>
+                  </label>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Dormitorios -->
+          <div class="mb-8">
+            <h3 class="font-bold text-text-dark mb-4 border-b border-gray-100 pb-2">Dormitorios</h3>
+            <div class="flex flex-wrap gap-2">
+              {dormitorios.map(d => (
+                <button data-dormitorio={d} class="filter-dormitorio w-10 h-10 rounded-full border border-gray-200 text-gray-600 hover:bg-black-primary hover:text-white hover:border-black-primary transition-colors flex items-center justify-center font-medium">
+                  {d}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <!-- Pisos -->
+          <div>
+            <h3 class="font-bold text-text-dark mb-4 border-b border-gray-100 pb-2">Pisos</h3>
+            <div class="flex gap-2">
+              {pisos.map(p => (
+                <button data-piso={p} class="filter-piso px-4 py-2 rounded-lg border border-gray-200 text-gray-600 hover:bg-black-primary hover:text-white hover:border-black-primary transition-colors font-medium">
+                  {p}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <!-- Botón aplicar (visual) -->
+          <button id="clear-filters" class="w-full mt-8 bg-gold-accent hover:bg-yellow-600 text-white font-bold py-3 px-4 rounded-xl transition-colors">
+            Limpiar Filtros
+          </button>
+        </div>
+      </aside>
+
+      <!-- Product Grid -->
+      <main class="w-full lg:w-3/4">
+        
+        <div class="flex justify-between items-center mb-8">
+          <p class="text-gray-500">Mostrando <span id="model-counter" class="font-bold text-black-primary">{productos.length}</span> modelos</p>
+          <div class="flex items-center space-x-2">
+            <span class="text-sm text-gray-500">Ordenar por:</span>
+            <select class="border-gray-200 rounded-lg text-sm text-gray-700 py-2 pl-3 pr-8 focus:ring-gold-accent focus:border-gold-accent bg-white shadow-sm">
+              <option>Destacados</option>
+              <option>Superficie (menor a mayor)</option>
+              <option>Superficie (mayor a menor)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {productos.map((producto) => (
+            <div class="product-card bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col h-full border border-gray-50"
+                 data-categoria={producto.categoria}
+                 data-dormitorios={producto.dormitorios}
+                 data-pisos={producto.pisos}>
+              <!-- Image Container -->
+              <div class="relative h-56 overflow-hidden">
+                <img src={producto.imagen} alt={producto.nombre} class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <div class="absolute top-4 left-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-black-primary">
+                  {producto.categoria}
+                </div>
+              </div>
+              
+              <!-- Content -->
+              <div class="p-6 flex flex-col flex-grow">
+                <h3 class="text-lg font-bold text-black-primary mb-3 leading-tight">{producto.nombre}</h3>
+                
+                <!-- Specs -->
+                <div class="flex items-center gap-4 text-sm text-gray-500 mb-6 mt-auto">
+                  <div class="flex items-center">
+                    <svg class="w-4 h-4 mr-1 text-gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m3-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    <span>{producto.m2} m²</span>
+                  </div>
+                  {producto.dormitorios > 0 && (
+                    <div class="flex items-center">
+                      <svg class="w-4 h-4 mr-1 text-gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                      <span>{producto.dormitorios} dorm.</span>
+                    </div>
+                  )}
+                  <div class="flex items-center">
+                    <svg class="w-4 h-4 mr-1 text-gold-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m3-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    <span>{producto.pisos} {producto.pisos === 1 ? 'piso' : 'pisos'}</span>
+                  </div>
+                </div>
+                
+                <!-- Footer Action -->
+                <div class="pt-4 border-t border-gray-100 flex items-center justify-between">
+                  <span class="font-bold text-black-primary">{producto.precio}</span>
+                  <button class="text-gold-accent font-semibold hover:text-yellow-600 transition-colors flex items-center text-sm">
+                    Ver detalles
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-12 flex justify-center">
+          <nav class="flex items-center gap-2">
+            <button class="w-10 h-10 rounded-lg flex items-center justify-center border border-gray-200 text-gray-400 hover:text-black-primary hover:border-black-primary transition-colors disabled:opacity-50">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button class="w-10 h-10 rounded-lg flex items-center justify-center bg-black-primary text-white font-medium">1</button>
+            <button class="w-10 h-10 rounded-lg flex items-center justify-center border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors font-medium">2</button>
+            <button class="w-10 h-10 rounded-lg flex items-center justify-center border border-gray-200 text-gray-600 hover:bg-gray-50 transition-colors font-medium">3</button>
+            <span class="px-2 text-gray-400">...</span>
+            <button class="w-10 h-10 rounded-lg flex items-center justify-center border border-gray-200 text-gray-400 hover:text-black-primary hover:border-black-primary transition-colors">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+          </nav>
+        </div>
+
+      </main>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const checkboxes = document.querySelectorAll('.filter-categoria');
+    const dormButtons = document.querySelectorAll('.filter-dormitorio');
+    const pisoButtons = document.querySelectorAll('.filter-piso');
+    const productCards = document.querySelectorAll('.product-card');
+    const counter = document.getElementById('model-counter');
+    const clearBtn = document.getElementById('clear-filters');
+
+    let activeCategorias = [];
+    let activeDormitorio = null;
+    let activePiso = null;
+
+    function updateFilters() {
+      let visibleCount = 0;
+      
+      productCards.forEach(card => {
+        const cat = card.getAttribute('data-categoria');
+        const dorm = parseInt(card.getAttribute('data-dormitorios'));
+        const piso = parseInt(card.getAttribute('data-pisos'));
+
+        const matchCat = activeCategorias.length === 0 || activeCategorias.includes(cat);
+        const matchDorm = activeDormitorio === null || activeDormitorio === dorm;
+        const matchPiso = activePiso === null || activePiso === piso;
+
+        if (matchCat && matchDorm && matchPiso) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      if(counter) counter.textContent = visibleCount;
+    }
+
+    checkboxes.forEach(cb => {
+      cb.addEventListener('change', (e) => {
+        const val = e.target.value;
+        if (e.target.checked) {
+          activeCategorias.push(val);
+        } else {
+          activeCategorias = activeCategorias.filter(c => c !== val);
+        }
+        updateFilters();
+      });
+    });
+
+    dormButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const val = parseInt(e.currentTarget.getAttribute('data-dormitorio'));
+        if (activeDormitorio === val) {
+          activeDormitorio = null;
+          e.currentTarget.classList.remove('bg-black-primary', 'text-white', 'border-black-primary');
+        } else {
+          activeDormitorio = val;
+          dormButtons.forEach(b => b.classList.remove('bg-black-primary', 'text-white', 'border-black-primary'));
+          e.currentTarget.classList.add('bg-black-primary', 'text-white', 'border-black-primary');
+        }
+        updateFilters();
+      });
+    });
+
+    pisoButtons.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const val = parseInt(e.currentTarget.getAttribute('data-piso'));
+        if (activePiso === val) {
+          activePiso = null;
+          e.currentTarget.classList.remove('bg-black-primary', 'text-white', 'border-black-primary');
+        } else {
+          activePiso = val;
+          pisoButtons.forEach(b => b.classList.remove('bg-black-primary', 'text-white', 'border-black-primary'));
+          e.currentTarget.classList.add('bg-black-primary', 'text-white', 'border-black-primary');
+        }
+        updateFilters();
+      });
+    });
+
+    if(clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        activeCategorias = [];
+        activeDormitorio = null;
+        activePiso = null;
+        
+        checkboxes.forEach(cb => cb.checked = false);
+        dormButtons.forEach(b => b.classList.remove('bg-black-primary', 'text-white', 'border-black-primary'));
+        pisoButtons.forEach(b => b.classList.remove('bg-black-primary', 'text-white', 'border-black-primary'));
+        
+        updateFilters();
+      });
+    }
+  });
+</script>

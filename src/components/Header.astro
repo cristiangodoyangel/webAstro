@@ -13,36 +13,9 @@ import logo from '../img/logo.webp';
       
       <!-- Desktop Navigation -->
       <nav class="hidden md:flex space-x-8">
-        <div class="relative group">
-          <button class="text-text-dark hover:text-black-primary font-medium px-3 py-2 rounded-md inline-flex items-center">
-            Modelos Listos
-            <svg class="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-          </button>
-          <!-- Dropdown -->
-          <div class="absolute left-0 mt-0 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pt-2">
-            <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 overflow-hidden">
-              <a href="#" class="block px-4 py-3 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent transition-colors">Estilo Nórdico</a>
-              <a href="#" class="block px-4 py-3 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent transition-colors">Línea Mediterránea</a>
-              <a href="#" class="block px-4 py-3 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent transition-colors">Diseño Tradicional</a>
-            </div>
-          </div>
-        </div>
-        <a href="#" class="text-text-dark hover:text-black-primary font-medium px-3 py-2 rounded-md">Proyecto Personalizado</a>
-        <div class="relative group">
-          <button class="text-text-dark hover:text-black-primary font-medium px-3 py-2 rounded-md inline-flex items-center">
-            Tienda Online
-            <svg class="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-          </button>
-          <!-- Dropdown -->
-          <div class="absolute left-0 mt-0 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pt-2">
-            <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 overflow-hidden">
-              <a href="#" class="block px-4 py-3 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent transition-colors">Kits de Paneles SIP</a>
-              <a href="#" class="block px-4 py-3 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent transition-colors">Accesorios y Fijaciones</a>
-              <a href="#" class="block px-4 py-3 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent transition-colors">Herramientas</a>
-            </div>
-          </div>
-        </div>
-        <a href="#" class="text-text-dark hover:text-black-primary font-medium px-3 py-2 rounded-md">Contacto</a>
+        <a href="/catalogo" class="text-text-dark hover:text-gold-accent font-bold px-3 py-2 rounded-md transition-colors uppercase text-sm tracking-wider">Catálogo</a>
+        <a href="#respaldo" class="text-text-dark hover:text-gold-accent font-bold px-3 py-2 rounded-md transition-colors uppercase text-sm tracking-wider">Acerca de Nosotros</a>
+        <a href="#contacto" class="text-text-dark hover:text-gold-accent font-bold px-3 py-2 rounded-md transition-colors uppercase text-sm tracking-wider">Contacto</a>
       </nav>
 
       <!-- CTA Button -->
@@ -67,24 +40,9 @@ import logo from '../img/logo.webp';
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0 top-[100%]">
     <div class="px-4 pt-2 pb-6 space-y-1">
-      <div class="py-2">
-        <div class="font-bold text-black-primary px-3 py-2">Modelos Listos</div>
-        <div class="pl-6 space-y-1 border-l-2 border-gray-100 ml-4">
-          <a href="#" class="block px-3 py-2 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent rounded-md">Estilo Nórdico</a>
-          <a href="#" class="block px-3 py-2 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent rounded-md">Línea Mediterránea</a>
-          <a href="#" class="block px-3 py-2 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent rounded-md">Diseño Tradicional</a>
-        </div>
-      </div>
-      <a href="#" class="block px-3 py-2 font-bold text-black-primary hover:bg-grey-light hover:text-gold-accent rounded-md">Proyecto Personalizado</a>
-      <div class="py-2">
-        <div class="font-bold text-black-primary px-3 py-2">Tienda Online</div>
-        <div class="pl-6 space-y-1 border-l-2 border-gray-100 ml-4">
-          <a href="#" class="block px-3 py-2 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent rounded-md">Kits de Paneles SIP</a>
-          <a href="#" class="block px-3 py-2 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent rounded-md">Accesorios y Fijaciones</a>
-          <a href="#" class="block px-3 py-2 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent rounded-md">Herramientas</a>
-        </div>
-      </div>
-      <a href="#" class="block px-3 py-2 font-bold text-black-primary hover:bg-grey-light hover:text-gold-accent rounded-md">Contacto</a>
+      <a href="/catalogo" class="block px-3 py-3 font-bold text-black-primary hover:bg-grey-light hover:text-gold-accent rounded-md uppercase text-sm tracking-wider">Catálogo</a>
+      <a href="#respaldo" class="block px-3 py-3 font-bold text-black-primary hover:bg-grey-light hover:text-gold-accent rounded-md uppercase text-sm tracking-wider">Acerca de Nosotros</a>
+      <a href="#contacto" class="block px-3 py-3 font-bold text-black-primary hover:bg-grey-light hover:text-gold-accent rounded-md uppercase text-sm tracking-wider">Contacto</a>
       
       <div class="pt-4 px-3">
         <a href="https://wa.me/56976007211" target="_blank" rel="noopener noreferrer" class="w-full bg-gold-accent hover:bg-yellow-600 text-white font-semibold py-3 px-5 rounded-full shadow-md text-center flex items-center justify-center">
