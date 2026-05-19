@@ -1,0 +1,109 @@
+---
+// Header component
+import logo from '../img/logo.webp';
+---
+
+<header class="bg-white shadow-sm sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-30">
+      <div class="flex-shrink-0 flex items-center">
+        <!-- Logo Text representing vertys.cl -->
+        <a href="/" class="font-black text-3xl tracking-tighter text-black-primary"><img src={logo.src} alt="VERTYS Logo" class="h-22 w-auto" /></a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8">
+        <div class="relative group">
+          <button class="text-text-dark hover:text-black-primary font-medium px-3 py-2 rounded-md inline-flex items-center">
+            Modelos Listos
+            <svg class="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </button>
+          <!-- Dropdown -->
+          <div class="absolute left-0 mt-0 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pt-2">
+            <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 overflow-hidden">
+              <a href="#" class="block px-4 py-3 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent transition-colors">Estilo Nórdico</a>
+              <a href="#" class="block px-4 py-3 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent transition-colors">Línea Mediterránea</a>
+              <a href="#" class="block px-4 py-3 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent transition-colors">Diseño Tradicional</a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="text-text-dark hover:text-black-primary font-medium px-3 py-2 rounded-md">Proyecto Personalizado</a>
+        <div class="relative group">
+          <button class="text-text-dark hover:text-black-primary font-medium px-3 py-2 rounded-md inline-flex items-center">
+            Tienda Online
+            <svg class="ml-1 h-4 w-4 transition-transform group-hover:rotate-180" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+          </button>
+          <!-- Dropdown -->
+          <div class="absolute left-0 mt-0 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 pt-2">
+            <div class="bg-white rounded-xl shadow-xl border border-gray-100 py-2 overflow-hidden">
+              <a href="#" class="block px-4 py-3 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent transition-colors">Kits de Paneles SIP</a>
+              <a href="#" class="block px-4 py-3 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent transition-colors">Accesorios y Fijaciones</a>
+              <a href="#" class="block px-4 py-3 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent transition-colors">Herramientas</a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="text-text-dark hover:text-black-primary font-medium px-3 py-2 rounded-md">Contacto</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="hidden md:flex items-center">
+        <a href="https://wa.me/56976007211" target="_blank" rel="noopener noreferrer" class="bg-gold-accent hover:bg-yellow-600 text-white font-semibold py-2 px-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"/></svg>
+          ¿Cómo podemos ayudarte?
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="md:hidden flex items-center">
+        <button id="mobile-menu-btn" class="text-text-dark hover:text-black-primary p-2 focus:outline-none">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0 top-[100%]">
+    <div class="px-4 pt-2 pb-6 space-y-1">
+      <div class="py-2">
+        <div class="font-bold text-black-primary px-3 py-2">Modelos Listos</div>
+        <div class="pl-6 space-y-1 border-l-2 border-gray-100 ml-4">
+          <a href="#" class="block px-3 py-2 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent rounded-md">Estilo Nórdico</a>
+          <a href="#" class="block px-3 py-2 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent rounded-md">Línea Mediterránea</a>
+          <a href="#" class="block px-3 py-2 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent rounded-md">Diseño Tradicional</a>
+        </div>
+      </div>
+      <a href="#" class="block px-3 py-2 font-bold text-black-primary hover:bg-grey-light hover:text-gold-accent rounded-md">Proyecto Personalizado</a>
+      <div class="py-2">
+        <div class="font-bold text-black-primary px-3 py-2">Tienda Online</div>
+        <div class="pl-6 space-y-1 border-l-2 border-gray-100 ml-4">
+          <a href="#" class="block px-3 py-2 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent rounded-md">Kits de Paneles SIP</a>
+          <a href="#" class="block px-3 py-2 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent rounded-md">Accesorios y Fijaciones</a>
+          <a href="#" class="block px-3 py-2 text-sm text-text-dark hover:bg-grey-light hover:text-gold-accent rounded-md">Herramientas</a>
+        </div>
+      </div>
+      <a href="#" class="block px-3 py-2 font-bold text-black-primary hover:bg-grey-light hover:text-gold-accent rounded-md">Contacto</a>
+      
+      <div class="pt-4 px-3">
+        <a href="https://wa.me/56976007211" target="_blank" rel="noopener noreferrer" class="w-full bg-gold-accent hover:bg-yellow-600 text-white font-semibold py-3 px-5 rounded-full shadow-md text-center flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.423-.101.827z"/></svg>
+          ¿Cómo podemos ayudarte?
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Script para manejar el menú móvil
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  }
+</script>

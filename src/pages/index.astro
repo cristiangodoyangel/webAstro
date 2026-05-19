@@ -1,0 +1,90 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import ReviewCarousel from '../components/react/ReviewCarousel.jsx';
+import ThermalCalculator from '../components/react/ThermalCalculator.jsx';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+	<Header />
+	
+	<main>
+		<Hero />
+		<Features />
+		
+		<!-- Seccion de Modelos (Static Placeholder) -->
+		<section id="modelos" class="py-20 bg-white">
+			<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-bold text-black-primary mb-4">Colección de viviendas</h2>
+					<p class="text-lg text-slate-technical max-w-2xl mx-auto">
+						Descubre nuestras estructuras modulares y residencias pre-fabricadas con el sistema SIP de VERTYS.
+					</p>
+				</div>
+				
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+					<!-- Card 1 -->
+					<div class="bg-grey-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+						<div class="h-64 overflow-hidden">
+							<img src="https://images.unsplash.com/photo-1518780664697-55e3ad937233?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modelo Nórdico" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-bold text-text-dark mb-2">Estilo Nórdico</h3>
+							<p class="text-slate-technical text-sm mb-4">Minimalismo y confort con retención de calor superior.</p>
+							<a href="#" class="text-gold-accent font-bold hover:text-yellow-600 transition-colors inline-flex items-center">
+								Explorar opciones
+								<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+							</a>
+						</div>
+					</div>
+					
+					<!-- Card 2 -->
+					<div class="bg-grey-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+						<div class="h-64 overflow-hidden">
+							<img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modelo Mediterráneo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-bold text-text-dark mb-2">Línea Mediterránea</h3>
+							<p class="text-slate-technical text-sm mb-4">Arquitectura de vanguardia con techumbres invisibles.</p>
+							<a href="#" class="text-gold-accent font-bold hover:text-yellow-600 transition-colors inline-flex items-center">
+								Explorar opciones
+								<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+							</a>
+						</div>
+					</div>
+					
+					<!-- Card 3 -->
+					<div class="bg-grey-light rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group">
+						<div class="h-64 overflow-hidden">
+							<img src="https://images.unsplash.com/photo-1587061949409-02df41d5e562?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Modelo Dos Aguas" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+						</div>
+						<div class="p-6">
+							<h3 class="text-xl font-bold text-text-dark mb-2">Diseño Tradicional</h3>
+							<p class="text-slate-technical text-sm mb-4">Estructura clásica adaptada a la máxima eficiencia.</p>
+							<a href="#" class="text-gold-accent font-bold hover:text-yellow-600 transition-colors inline-flex items-center">
+								Explorar opciones
+								<svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+							</a>
+						</div>
+					</div>
+				</div>
+				
+				<div class="mt-12 text-center">
+					<a href="#" class="inline-flex items-center justify-center px-8 py-3 border border-black-primary text-base font-medium rounded-full text-black-primary hover:bg-black-primary hover:text-white transition-colors">
+						Ver catálogo completo
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<ThermalCalculator client:load />
+		
+		<ReviewCarousel client:visible />
+		
+	</main>
+	
+	<Footer />
+</Layout>
