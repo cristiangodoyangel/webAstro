@@ -13,6 +13,9 @@ export default function ThermalCalculator() {
           
           <div>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Calculadora de Transmitancia Térmica SIP</h2>
+            <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+              La <strong>transmitancia térmica (Valor U)</strong> mide la rapidez con la que el calor entra o escapa a través de los muros o techos. Mientras más bajo sea este valor, mejor es la aislación de tu casa. Utiliza esta herramienta para encontrar el grosor exacto de panel que necesitas para mantener tu hogar a la temperatura ideal y cumplir con las normativas.
+            </p>
             <ul className="space-y-4 mb-8 text-gray-300">
               <li className="flex items-start">
                 <svg className="w-6 h-6 text-gold-accent mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -29,12 +32,7 @@ export default function ThermalCalculator() {
             </ul>
             
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-black-primary hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-full transition-colors text-center">
-                Buscar por ubicación
-              </button>
-              <button className="bg-transparent border-2 border-gold-accent text-gold-accent hover:bg-gold-accent hover:text-white font-bold py-3 px-6 rounded-full transition-colors text-center">
-                Buscar por medida
-              </button>
+             
             </div>
           </div>
 
@@ -87,7 +85,7 @@ export default function ThermalCalculator() {
                 </div>
                 
                 <div className="w-16 h-16 rounded-full border-4 border-black-primary flex items-center justify-center text-black-primary font-bold">
-                  OK
+                 
                 </div>
               </div>
             </div>
